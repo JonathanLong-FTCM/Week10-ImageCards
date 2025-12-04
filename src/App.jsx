@@ -49,11 +49,11 @@ function App() {
   const [globalLike, setGlobalLike] = useState(0);
   const [globalDislike, setGlobalDislike] = useState(0);
 
-  const totalGlobalLike = () => {
+  const totalLike = () => {
     setGlobalLike((prev) => prev + 1);
   };
 
-  const totalGlobalDislike = () => {
+  const totalDislike = () => {
     setGlobalDislike((prev) => prev + 1);
   };
 
@@ -91,8 +91,8 @@ function App() {
             description={image.description}
             author={image.author}
             uploadedDatetime={image.uploadedDatetime}
-            onGlobalLike={totalGlobalLike}
-            onGlobalDislike={totalGlobalDislike}
+            onGlobalLike={totalLike}
+            onGlobalDislike={totalDislike}
           />
         ))}
       </div>

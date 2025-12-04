@@ -6,12 +6,12 @@ function ImageCard({ url, title, description, author, uploadedDatetime, onGlobal
   const [commentText, setCommentText] = useState("");
   const [comments, setComments] = useState([]);
 
-  const likeClick = () => {
+  const handleLike = () => {
     setLike((prev) => prev + 1);      
     onGlobalLike();                   
   };
 
-  const dislikeClick = () => {
+  const handleDislike = () => {
     setDislike((prev) => prev + 1);   
     onGlobalDislike();                
   };
@@ -52,8 +52,8 @@ function ImageCard({ url, title, description, author, uploadedDatetime, onGlobal
       <p style={{marginBottom: '5px'}}><span style={{fontWeight: 'bold', color: '#273347'}}>Uploaded: </span>{uploadedDatetime}</p>
 
       <div style={{display: 'flex', justifyContent: 'center', margin: '20px'}}>
-        <button onClick={likeClick} style={{padding: '10px 18px 10px 18px', fontSize: '15px', fontWeight: 'bold'}}>&#x1F44D; {like}</button>
-        <button onClick={dislikeClick} style={{padding: '10px 18px 10px 18px', fontSize: '15px', fontWeight: 'bold'}}>&#x1F44E; {dislike}</button>
+        <button onClick={handleLike} style={{padding: '10px 18px 10px 18px', fontSize: '15px', fontWeight: 'bold'}}>&#x1F44D; {like}</button>
+        <button onClick={handleDislike} style={{padding: '10px 18px 10px 18px', fontSize: '15px', fontWeight: 'bold'}}>&#x1F44E; {dislike}</button>
       </div>
 
       <div style={{display: 'flex', justifyContent: 'center', margin: '-20px'}}>
